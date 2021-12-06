@@ -3,7 +3,7 @@ title:               'Музяблоки'
 tagline:             'Новости музыкальных приложений для #iOS и #iPadOS. Новинки, обновления, обзоры.'
 description:         '<a href="https://t.me/muzapples_chat">Русскоязычное iOS-коммьюнити в чате</a>.'
 url:                 'https://necrobyte.github.io'
-baseurl:             '/muzapples/'
+baseurl:             '/muzapples'
 paginate:            5
 permalink:           pretty
 
