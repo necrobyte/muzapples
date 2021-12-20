@@ -8,6 +8,12 @@ layout: default
   {{ content }}
 </div>
 
+{% if page.tags.size >= 1 %}
+  {% for tag in page.tags %}
+    {{ post.date | date: "%B %d, %Y" }}: <a href="{{ site.baseurl }}/tags/{{ tag }}">#{{ tag }}</a>
+  {% endfor %}
+{% endif %}
+
 {% if site.related_posts.size >= 1 %}
 <div class="related">
   <h2>Related posts</h2>
