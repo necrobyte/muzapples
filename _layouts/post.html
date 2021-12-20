@@ -10,7 +10,7 @@ layout: default
 
 {% if page.tags.size >= 1 %}
   {% for tag in page.tags %}
-    {{ post.date | date: "%B %d, %Y" }}: <a href="{{ site.baseurl }}/tags/{{ tag }}">#{{ tag }}</a>
+    <a href="{{ site.baseurl }}/tags/{{ tag }}">#{{ tag }} </a>
   {% endfor %}
 {% endif %}
 
