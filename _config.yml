@@ -6,6 +6,7 @@ url:                 'https://necrobyte.github.io'
 baseurl:             '/muzapples'
 paginate:            10
 permalink:           pretty
+excerpt_separator:   '<!--more-->'
 
 # About/contact
 author:
