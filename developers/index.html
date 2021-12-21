@@ -3,17 +3,12 @@ layout: page
 title: Разработчики
 ---
 
-{% capture tags %}
-  {% for post in site.posts %}
-    {{ post.categories[0] }}
-  {% endfor %}
-{% endcapture %}
-{% assign sortedtags = tags | split:' ' | sort %}
+{% assign sortedtags = site.posts | group_by: "categories[0]" | sort: "name" %}
 
 {% for tag in sortedtags %}
-  <h3 id="{{ tag }}"><a href = "{{ site.baseurl }}/developers/{{ tag }}">{{ tag }}</a></h3>
+  <h3 id="{{ tag.name }}"><a href = "{{ site.baseurl }}/developers/{{ tag.name }}">{{ tag.name }}</a></h3>
   <ul>
-  {% for post in site.categories[tag] %}
+  {% for post in tag.items %}
     <li>
       {% include postlistitem.html %}
     </li>
