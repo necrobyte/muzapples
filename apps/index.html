@@ -8,7 +8,7 @@ title: Приложения
 {% for tag in sortedtags %}
   <h3 id="{{ tag.name[0] }}"><a href = "{{ site.baseurl }}/apps/{{ tag.name[0] }}">{{ tag.name[0] | replace: "_", " " }}</a></h3>
   <ul>
-  {% for post in site.categories[ tag.name[0] ] %}
+  {% for post in site.categories[ "miRack" ] %}
     <li>
       {% include postlistitem.html %}
     </li>
