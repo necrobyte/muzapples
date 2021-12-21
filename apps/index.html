@@ -3,12 +3,12 @@ layout: page
 title: Приложения
 ---
 
-{% assign sortedtags = site.posts | where_exp: "item", "item.categories.size == 2" | group_by_exp: "item", "item.categories | shift" | map: "name" | sort %}
+{% assign sortedtags = site.posts | where_exp: "item", "item.categories.size == 2" | group_by_exp: "item", "item.categories | shift" | sort: "name" %}
 
 {% for tag in sortedtags %}
-  <h3 id="{{ tag.name }}"><a href = "{{ site.baseurl }}/apps/{{ tag.name }}">{{ tag.name | replace: "_", " " }}</a></h3>
+  <h3 id="{{ tag.name[0] }}"><a href = "{{ site.baseurl }}/apps/{{ tag.name[0] }}">{{ tag.name[0] | replace: "_", " " }}</a></h3>
   <ul>
-  {% for post in site.categories[ tag.name ] %}
+  {% for post in site.categories[ tag.name[0] ] %}
     <li>
       {% include postlistitem.html %}
     </li>
