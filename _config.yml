@@ -4,7 +4,7 @@ tagline:             'Новости музыкальных приложений
 description:         '<a href="https://t.me/muzapples_chat">Русскоязычное iOS-коммьюнити в чате</a>.'
 url:                 'https://necrobyte.github.io'
 baseurl:             '/muzapples'
-paginate:            5
+paginate:            10
 permalink:           pretty
 
 # About/contact
