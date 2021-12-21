@@ -3,7 +3,7 @@ layout: page
 title: Приложения
 ---
 
-{% assign sortedtags = site.posts | where_exp: "item", "item.categories.size == 2" | group_by_exp: "item", "item.categories | shift" | sort: "name" %}
+{% assign sortedtags = site.posts | where_exp: "item", "item.categories.size == 2" | group_by_exp: "item", "item.categories | shift" | map: "name" | sort %}
 
 {% for tag in sortedtags %}
   <h3 id="{{ tag.name }}"><a href = "{{ site.baseurl }}/apps/{{ tag.name }}">{{ tag.name | replace: "_", " " }}</a></h3>
