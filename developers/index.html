@@ -3,7 +3,7 @@ layout: page
 title: Разработчики
 ---
 
-{% assign sortedtags = site.posts | group_by_exp: "item", "item.categories | pop" | sort: "name" %}
+{% assign sortedtags = site.posts | where_exp: "item", "item.categories | size == 2" | group_by_exp: "item", "item.categories | pop" | sort: "name" %}
 
 {% for tag in sortedtags %}
   <h3 id="{{ tag.name }}"><a href = "{{ site.baseurl }}/developers/{{ tag.name }}">{{ tag.name }}</a></h3>
